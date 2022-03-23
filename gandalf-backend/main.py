@@ -8,6 +8,7 @@ client_socket = socket.socket(family=socket.AF_INET, type=socket.SOCK_DGRAM)
 
 @app.route("/web/", methods=['POST'])
 def web():
+    print(request.json)
     url = request.json['url']
     message = f"web {url}"
     encoded_message = str.encode(message)
