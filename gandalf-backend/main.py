@@ -1,7 +1,10 @@
 from flask import Flask, request
 import socket
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)
+
 SERVER_ADDRESS_PORT = ("0.0.0.0", 8000)
 
 client_socket = socket.socket(family=socket.AF_INET, type=socket.SOCK_DGRAM)
