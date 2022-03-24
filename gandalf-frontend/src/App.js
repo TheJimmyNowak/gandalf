@@ -23,11 +23,11 @@ function App() {
     });
   }
   return (
-    <div className="App">
+    <div id="container">
       <form onSubmit={handleWebSubmit}>
-        <label for="url">Url: </label>
-        <input type="url" name="url" id="url" pattern="https://.*" onChange={handleChange} required/>
-        <input type="submit" value="Open web"/>
+        <label for="url">Url: </label><br/>
+        <input type="url" name="url" id="url" pattern="https://.*" onChange={handleChange} required/><br/>
+        <input type="submit" value="Open web"/><br/>
       </form>
     </div>
   );
