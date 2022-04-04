@@ -5,15 +5,17 @@ from flask_cors import CORS
 app = Flask(__name__)
 CORS(app)
 
-SERVER_ADDRESS_PORT = ("0.0.0.0", 8000)
+IFACE = "wlp4s0"
+
 
 client_socket = socket.socket(family=socket.AF_INET, type=socket.SOCK_DGRAM)
 
 @app.route("/web/", methods=['POST'])
 def web():
-    print(request.json)
+    host = (request.json['host'], 8000)
     url = request.json['url']
     message = f"web {url}"
     encoded_message = str.encode(message)
-    client_socket.sendto(encoded_message, SERVER_ADDRESS_PORT)
+    client_socket.sendto(encoded_message, host)
     return "Succes"
+
