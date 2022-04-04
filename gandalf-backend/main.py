@@ -1,10 +1,10 @@
 from flask import Flask, request
-import socket
 from flask_cors import CORS
+import socket
 
 app = Flask(__name__)
-CORS(app)
-
+CORS(app, resources={r"/*": {"origins": "*"}})
+app.config['CORS_HEADERS'] = 'Content-Type'
 IFACE = "wlp4s0"
 
 
