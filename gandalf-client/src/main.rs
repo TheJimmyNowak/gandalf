@@ -6,10 +6,10 @@ use webbrowser;
 
 fn main() {
     let connection_string:String = String::from("0.0.0.0:8000");
-    println!("Connecting to: {}", connection_string); 
+    println!("Binding to: {}", connection_string); 
 
     let socket = connect(connection_string)
-        .expect("Cannot connect bind to port");
+        .expect("Cannot bind to port");
     println!("Server is running!");
 
     handle_communication(socket)
