@@ -7,10 +7,11 @@ CORS(app, resources={r"/*": {"origins": "*"}})
 app.config['CORS_HEADERS'] = 'Content-Type'
 IFACE = "wlp4s0"
 
+BASE_URL = "/api/"
 
 client_socket = socket.socket(family=socket.AF_INET, type=socket.SOCK_DGRAM)
 
-@app.route("/web/", methods=['POST'])
+@app.route(BASE_URL + "web/", methods=['POST'])
 def web():
     host = (request.json['host'], 8000)
     url = request.json['url']
