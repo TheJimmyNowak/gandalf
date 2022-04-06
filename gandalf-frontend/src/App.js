@@ -3,7 +3,7 @@ import { useState } from "react";
 import axios from 'axios';
 
 function App() {
-  const API_ADDRESS="http://szafa.zse.rzeszow.pl/api";
+  const API_ADDRESS="http://szafa.zse.rzeszow.pl:5556/api";
   const [inputs, setInputs] = useState({});
   const clients = []
 
