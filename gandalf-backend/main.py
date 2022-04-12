@@ -17,6 +17,12 @@ def web():
     url = request.json['url']
     message = f"web {url}"
     encoded_message = str.encode(message)
+    if host == "":
+        for i in range(18):
+            client_socket.sendto(encoded_message, f"172.16.10.{i}")
+
+        return "Succes"
+            
     client_socket.sendto(encoded_message, host)
     return "Succes"
 
