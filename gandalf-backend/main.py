@@ -19,7 +19,7 @@ def web():
     encoded_message = str.encode(message)
     if host == "":
         for i in range(18):
-            client_socket.sendto(encoded_message, f"172.16.10.{i}")
+            client_socket.sendto(encoded_message, f"172.16.10.{i+100}")
 
         return "Succes"
             
