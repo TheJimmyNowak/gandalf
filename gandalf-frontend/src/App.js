@@ -8,15 +8,7 @@ function App() {
   const clients = []
 
   var i = 0;
-  // Hardcoded clients cause clients has static ip
-  for (i=0; i<18; i++){
-    clients.push("172.16.110." + i);
-  }
-
-  const listClients = clients.map((client) =>
-    <li key={client}>{client}</li>
-  )
-
+  
   const handleChange = (event) => {
     const name = event.target.name;
     const value = event.target.value;
@@ -39,16 +31,11 @@ function App() {
     <div id="container">
       <form onSubmit={handleWebSubmit}>
         <label>Url: </label>
-        <input type="url" name="url" id="url" pattern="https://.*" onChange={handleChange} required/><br/>
+        <input type="url" name="url" id="url" onChange={handleChange} required/><br/>
         <label>Host: </label>
         <input name="host" id="host" onChange={handleChange}/><br/>
         <input type="submit" value="Open web"/><br/>
       </form>
-      <div id="clients-list">
-        {
-          listClients
-        } 
-      </div>
     </div>
   );
 }

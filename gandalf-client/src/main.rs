@@ -1,8 +1,8 @@
+#![windows_subsystem = "windows"]
 use std::net::UdpSocket;
 use std::str;
 use std::io;
 use webbrowser;
-
 
 fn main() {
     let connection_string:String = String::from("0.0.0.0:8000");
